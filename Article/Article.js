@@ -129,7 +129,7 @@ function createBox (title, date, firstParagraph, secondParagraph, thirdParagraph
   articleDate.classList.add('date')
   articleButton.classList.add('expandButton')
   articleButtonOpen.classList.add('btn-open')
-  articleButtonClose.classList.add('btn-close', 'hideButton')
+  articleButtonClose.classList.add('buttonClose', 'hideButton')
 
 
   //content
@@ -142,22 +142,21 @@ function createBox (title, date, firstParagraph, secondParagraph, thirdParagraph
   articleButtonClose.textContent = 'Close'
 
 
+//event listener
 
+articleButton.addEventListener('click', event => {
+  articleButtonOpen.classList.toggle('hideButton')
+  articleButtonClose.classList.toggle('hideButton')
+  article.classList.toggle('article-open')
+})
 
+return article
 }
 
-/*
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
-
-  Step 3: return the entire component.
-
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 const articleBox = document.querySelector('.articles')
 
 data.forEach(data => {
   articleBox.appendChild(createBox(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
 })
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
 
-*/
