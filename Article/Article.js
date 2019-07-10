@@ -128,8 +128,8 @@ function createBox (title, date, firstParagraph, secondParagraph, thirdParagraph
   article.classList.add('article')
   articleDate.classList.add('date')
   articleButton.classList.add('expandButton')
-  articleButtonOpen.classList.add('btn-open')
-  articleButtonClose.classList.add('buttonClose', 'hideButton')
+  articleButtonOpen.classList.add('expandButton')
+  articleButtonClose.classList.add('expandButton', 'hideButton')
 
 
   //content
