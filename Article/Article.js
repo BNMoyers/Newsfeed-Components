@@ -110,6 +110,15 @@ function createBox (title, date, firstParagraph, secondParagraph, thirdParagraph
   const articlePara3 = document.createElement('p');
   const articleButton = document.createElement('span');
   
+  //structure
+
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
+  article.appendChild(articlePara1)
+  article.appendChild(articlePara2)
+  article.appendChild(articlePara3)
+  article.appendChild(articleButton)
+
 
 
 
