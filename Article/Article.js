@@ -119,8 +119,11 @@ function createBox (title, date, firstParagraph, secondParagraph, thirdParagraph
   article.appendChild(articlePara3)
   article.appendChild(articleButton)
 
+  //classes
 
-
+  article.classList.add('article')
+  articleDate.classList.add('date')
+  articleButton.classList.add('expandButton')
 
 }
 
