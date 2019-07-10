@@ -109,6 +109,10 @@ function createBox (title, date, firstParagraph, secondParagraph, thirdParagraph
   const articlePara2 = document.createElement('p');
   const articlePara3 = document.createElement('p');
   const articleButton = document.createElement('span');
+  const articleButtonOpen = document.createElement('button');
+  const articleButtonClose = document.createElement('button');
+  
+
   
   //structure
 
@@ -124,6 +128,21 @@ function createBox (title, date, firstParagraph, secondParagraph, thirdParagraph
   article.classList.add('article')
   articleDate.classList.add('date')
   articleButton.classList.add('expandButton')
+  articleButtonOpen.classList.add('btn-open')
+  articleButtonClose.classList.add('btn-close', 'hideButton')
+
+
+  //content
+  articleTitle.textContent = title
+  articleDate.textContent = date
+  articlePara1.textContent = firstParagraph
+  articlePara2.textContent = secondParagraph
+  articlePara3.textContent = thirdParagraph
+  articleButtonOpen.textContent = 'Expand'
+  articleButtonClose.textContent = 'Close'
+
+
+
 
 }
 
