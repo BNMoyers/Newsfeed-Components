@@ -101,7 +101,18 @@ const data = [
 */
 
 function createBox (title, date, firstParagraph, secondParagraph, thirdParagraph){
+  //elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articlePara1 = document.createElement('p');
+  const articlePara2 = document.createElement('p');
+  const articlePara3 = document.createElement('p');
+  const articleButton = document.createElement('span');
   
+
+
+
 }
 
 /*
