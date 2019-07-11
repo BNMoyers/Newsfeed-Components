@@ -85,20 +85,19 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  //added article
+  {
+    title: 'Study Says Web Devs Make Great DMs - No One is Surprised',
+    date: 'Jul 10th, 2019',
+    firstParagraph: `Aud Pulver was seven years old when her big sister, Greta, ran away. Like most children, details of Aud’s life are hazy before that year. Yet the disappearance left a sharp divide in Aud’s memories; for the Pulver family, all of life was remembered as either before or after Greta.`,  
+    secondParagraph: `What Aud remembered of Greta was clouded and dreamy; blue eyes, golden hair, a bell-like laugh. She stood at the center of all the youth in Spindle, holding them together as they revolved around her.  `,
+
+    thirdParagraph: `It was in the spring of Greta’s 15th year when she got caught in a thunderstorm coming home from the village. According to Greta, the sky grew so dark that she lost her way in the familiar woods. But a kind young man - Greta thought he might have been an elf, on account of his ears - found her and escorted her back to the path. `
+  },
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
-  
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
-
-    {three separate paragraph elements}
-
-    <span class='expandButton'></span>
-  </div>
-*/
+//function
 
 function createBox (title, date, firstParagraph, secondParagraph, thirdParagraph){
   //elements
