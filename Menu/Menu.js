@@ -9,27 +9,34 @@ let menuItems = [
   'Log Out'
 ];
 
-/* 
+//menu container
+const menuButton = document.querySelector('.menu-button')
+menuButton.appendChild(createMenu())
 
-  Step 1: Write a function that will create a menu component as seen below:
+function createMenu(arr){
+//elements
 
-  <div class="menu">
-    <ul>
-      {each menu item as a list item}
-    </ul>
-  </div>
+const menu = document.createElement('div');
+const list = document.createElement('ul');
 
-  Pass the function an array as it's only argument.
+//handling the array
 
-  Step 2: Iterate over the array creating a list item <li> element for each item in the array. 
-  Add those items to the <ul>
+menuItems.forEach(item => {
+  let listItem = document.createElement('li');
+})
 
-  Step 3: Using a DOM selector, select the menu button currently on the DOM.
-  
-  Step 4: add a click handler to the menu button, when clicked it should toggle the class 'menu--open' on the menu itself
+//element structure
+menu.appendChild(list)
+list.appendChild(listItem)
 
-  Step 5: return the menu component.
+//classes
+menu.classList.add('menu')
 
-  Step 6: add the menu component to the DOM.
-  
-*/
+//event listener
+menuButton.addEventListener('click', event => {
+  menu.classList.toggle('menu--open')
+})
+return menu
+}
+
+
