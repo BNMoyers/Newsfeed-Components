@@ -85,30 +85,81 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
-  }
+  },
+  //added article
+  {
+    title: 'Study Says Web Devs Make Great DMs - No One is Surprised',
+    date: 'Jul 10th, 2019',
+    firstParagraph: `Aud Pulver was seven years old when her big sister, Greta, ran away. Like most children, details of Aud’s life are hazy before that year. Yet the disappearance left a sharp divide in Aud’s memories; for the Pulver family, all of life was remembered as either before or after Greta.`,  
+    secondParagraph: `What Aud remembered of Greta was clouded and dreamy; blue eyes, golden hair, a bell-like laugh. She stood at the center of all the youth in Spindle, holding them together as they revolved around her.  `,
+
+    thirdParagraph: `It was in the spring of Greta’s 15th year when she got caught in a thunderstorm coming home from the village. According to Greta, the sky grew so dark that she lost her way in the familiar woods. But a kind young man - Greta thought he might have been an elf, on account of his ears - found her and escorted her back to the path. `
+  },
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
+//function
+
+function createBox (title, date, firstParagraph, secondParagraph, thirdParagraph){
+  //elements
+  const article = document.createElement('div');
+  const articleTitle = document.createElement('h2');
+  const articleDate = document.createElement('p');
+  const articlePara1 = document.createElement('p');
+  const articlePara2 = document.createElement('p');
+  const articlePara3 = document.createElement('p');
+  const articleButton = document.createElement('span');
+  const articleButtonOpen = document.createElement('button');
+  const articleButtonClose = document.createElement('button');
   
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
 
-    {three separate paragraph elements}
+  
+  //structure
 
-    <span class='expandButton'></span>
-  </div>
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
+  article.appendChild(articlePara1)
+  article.appendChild(articlePara2)
+  article.appendChild(articlePara3)
+  article.appendChild(articleButton)
+  articleButton.appendChild(articleButtonClose)
+  articleButton.appendChild(articleButtonOpen)
 
-  Hint: You will need to use createElement more than once here!
+  //classes
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each peice of the data object above.
+  article.classList.add('article')
+  articleDate.classList.add('date')
+  articleButton.classList.add('expandButton')
+  articleButtonOpen.classList.add('expandButton')
+  articleButtonClose.classList.add('expandButton', 'hideButton')
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
-  Step 3: return the entire component.
+  //content
+  articleTitle.textContent = title
+  articleDate.textContent = date
+  articlePara1.textContent = firstParagraph
+  articlePara2.textContent = secondParagraph
+  articlePara3.textContent = thirdParagraph
+  articleButtonClose.textContent = 'Close'
+  articleButtonOpen.textContent = 'Expand'
+  
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new artible
+//event listener
 
-*/
+articleButton.addEventListener('click', event => {
+  articleButtonClose.classList.toggle('hideButton')
+  articleButtonOpen.classList.toggle('hideButton')
+  
+  article.classList.toggle('article-open')
+})
+
+return article
+}
+
+
+const articleBox = document.querySelector('.articles')
+
+data.forEach(data => {
+  articleBox.appendChild(createBox(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph))
+})
+
