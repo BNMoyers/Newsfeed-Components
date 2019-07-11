@@ -122,6 +122,8 @@ function createBox (title, date, firstParagraph, secondParagraph, thirdParagraph
   article.appendChild(articlePara2)
   article.appendChild(articlePara3)
   article.appendChild(articleButton)
+  articleButton.appendChild(articleButtonClose)
+  articleButton.appendChild(articleButtonOpen)
 
   //classes
 
@@ -138,15 +140,17 @@ function createBox (title, date, firstParagraph, secondParagraph, thirdParagraph
   articlePara1.textContent = firstParagraph
   articlePara2.textContent = secondParagraph
   articlePara3.textContent = thirdParagraph
-  articleButtonOpen.textContent = 'Expand'
   articleButtonClose.textContent = 'Close'
+  articleButtonOpen.textContent = 'Expand'
+  
 
 
 //event listener
 
 articleButton.addEventListener('click', event => {
-  articleButtonOpen.classList.toggle('hideButton')
   articleButtonClose.classList.toggle('hideButton')
+  articleButtonOpen.classList.toggle('hideButton')
+  
   article.classList.toggle('article-open')
 })
 
