@@ -10,19 +10,23 @@ let menuItems = [
 ];
 
 //menu container
-const menuButton = document.querySelector('.menu-button')
-menuButton.appendChild(createMenu())
+const menuContainer = document.querySelector('header')
+menuContainer.appendChild(menuMaker(menuItems))
 
-function createMenu(arr){
+
+function menuMaker(array){
 //elements
 
+const menuButton = document.querySelector('.menu-button')
 const menu = document.createElement('div');
 const list = document.createElement('ul');
 
+
 //handling the array
 
-menuItems.forEach(item => {
-  let listItem = document.createElement('li');
+array.forEach(item => {
+  const navItems = document.createElement('li');
+  
 })
 
 //element structure
